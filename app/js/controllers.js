@@ -10,6 +10,27 @@ function TodoCtrl($scope) {
         return $scope.todos.length;
     };
 
+    $scope.today = function() {
+        var start = new Date();
+        start.setHours(0,0,0,0);
+
+        var end = new Date();
+        end.setHours(23,59,59,999);
+        return {
+            start: start,
+            end: end
+        };
+    };
+
+    $scope.isToday = function(dt) {
+        if (typeof dt.getMonth !== 'function') {
+            dt = new Date(dt);
+        }
+
+        var today = new Date();
+        return dt.getYear() === today.getYear() && dt.getMonth() === today.getMonth() && dt.getDay() === today.getDay();
+    };
+
     $scope.late = function() {
         var late = [],
             todos = $scope.todos,
@@ -27,14 +48,7 @@ function TodoCtrl($scope) {
         return late;
     };
 
-    $scope.isToday = function(dt) {
-        if (typeof dt.getMonth !== 'function') {
-            dt = new Date(dt);
-        }
 
-        var today = new Date();
-        return dt.getYear() === today.getYear() && dt.getMonth() === today.getMonth() && dt.getDay() === today.getDay();
-    };
 
     $scope.today = function() {
         var late = [],
@@ -56,13 +70,12 @@ function TodoCtrl($scope) {
     $scope.soon = function() {
         var late = [],
             todos = $scope.todos,
-            today = Date.now(),
             dt;
 
 
         for (var i = 0; i < todos.length; i++) {
             dt = new Date(todos[i].due);
-            if (dt < today) {
+            if (dt > $scope.today().end) {
                 late.push(todos[i]);
             }
         }
