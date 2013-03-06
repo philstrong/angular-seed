@@ -70,12 +70,14 @@ function TodoCtrl($scope) {
     $scope.soon = function() {
         var late = [],
             todos = $scope.todos,
+            today = $scope.today(),
+            weekout = today.end.getDate() + 7,
             dt;
 
 
         for (var i = 0; i < todos.length; i++) {
             dt = new Date(todos[i].due);
-            if (dt > $scope.today().end) {
+            if (dt > today.end && dt < weekout) {
                 late.push(todos[i]);
             }
         }
@@ -85,13 +87,14 @@ function TodoCtrl($scope) {
     $scope.someday = function() {
         var late = [],
             todos = $scope.todos,
-            today = Date.now(),
+            today = $scope.today(),
+            weekout = today.end.getDate() + 7,
             dt;
 
 
         for (var i = 0; i < todos.length; i++) {
             dt = new Date(todos[i].due);
-            if (dt < today) {
+            if (dt > weekout) {
                 late.push(todos[i]);
             }
         }
