@@ -28,3 +28,13 @@
   content: "";
   padding: 0;
 }
+
+.hdr {
+  border-bottom: solid 1px;
+}
+
+.hdr.late {
+  border-color: #cc0000;
+
+  color: red;
+}
