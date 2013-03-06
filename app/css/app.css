@@ -31,13 +31,28 @@
 
 .hdr {
   border-bottom: solid 1px;
-  font-size: 36px;
+  font-size: 32px;
   font-family: Verdana;
   text-transform: uppercase;
 }
 
 .hdr.late {
-  border-color: #cc0000;
+  border-color: rgb(200, 40, 20);
 
-  color: red;
+  color: rgb(200, 40, 20);
+}
+.hdr.today {
+  border-color: rgb(200, 180, 120);
+
+  color: rgb(200, 180, 120);
+}
+.hdr.soon {
+  border-color: #329696;
+
+  color: #329696;
+}
+.hdr.someday {
+  border-color: #4b9664;
+
+  color: #4b9664;
 }

@@ -175,7 +175,7 @@ function TodoCtrl($scope) {
         {
             title: 'Write up meeting notes',
             duration: 60,
-            due:"2013-04-01T08:00:00.000Z",
+            due:"2013-03-10T08:00:00.000Z",
             created:"2013-03-01T08:00:00.000Z",
             completed: null,
             deleted: false
