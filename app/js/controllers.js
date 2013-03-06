@@ -248,4 +248,7 @@ function LoginController($scope, $location) {
 }
 
 function MainController($scope) {
+    $scope.onItemClick = function(data) {
+        $scope.itemData = data;
+    };
 }
