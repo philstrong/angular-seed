@@ -2,56 +2,18 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>My AngularJS TODO App</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/list">list</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
-
-  <div ng-controller="TodoCtrl">
-
-    <h2>Total Todos: {{remaining()}}</h2>
-    <h2 class="hdr late">Late</h2>
-    <ul>
-      <li ng-repeat="todo in late()">
-        <h3>{{todo.title}}</h3>
-        <div>{{timeSince(todo.due)}}</div>
-      </li>
-    </ul>
-
-    <h2 class="hdr today">Today</h2>
-    <ul>
-      <li ng-repeat="todo in today()">
-        <h3>{{todo.title}}</h3>
-        <div>{{timeSince(todo.due)}}</div>
-      </li>
-    </ul>
-
-    <h2 class="hdr today">Soon</h2>
-    <ul>
-      <li ng-repeat="todo in soon()">
-        <h3>{{todo.title}}</h3>
-        <div>{{timeSince(todo.due)}}</div>
-      </li>
-    </ul>
-
-    <h2 class="hdr today">Someday</h2>
-    <ul>
-      <li ng-repeat="todo in someday()">
-        <h3>{{todo.title}}</h3>
-        <div>{{timeSince(todo.due)}}</div>
-      </li>
-    </ul>
-  </div>
-
+<body style="background-color: #000; color: #fff">
+  <div ng-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/ui-bootstrap-tpls-0.2.0.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
