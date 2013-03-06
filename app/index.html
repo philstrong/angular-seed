@@ -29,6 +29,22 @@
         <div>{{timeSince(todo.due)}}</div>
       </li>
     </ul>
+
+    <h2 class="hdr today">Soon</h2>
+    <ul>
+      <li ng-repeat="todo in soon()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
+
+    <h2 class="hdr today">Someday</h2>
+    <ul>
+      <li ng-repeat="todo in someday()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
   </div>
 
 
