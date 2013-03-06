@@ -1,0 +1,35 @@
+<div ng-controller="TodoCtrl">
+
+    <h2>Total Todos: {{remaining()}}</h2>
+    <h2 class="hdr late">Late</h2>
+    <ul>
+      <li ng-repeat="todo in late()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
+
+    <h2 class="hdr today">Today</h2>
+    <ul>
+      <li ng-repeat="todo in today()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
+
+    <h2 class="hdr today">Soon</h2>
+    <ul>
+      <li ng-repeat="todo in soon()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
+
+    <h2 class="hdr today">Someday</h2>
+    <ul>
+      <li ng-repeat="todo in someday()">
+        <h3>{{todo.title}}</h3>
+        <div>{{timeSince(todo.due)}}</div>
+      </li>
+    </ul>
+  </div>

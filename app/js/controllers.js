@@ -163,5 +163,14 @@ function TodoCtrl($scope) {
         {"title":"Walk","duration":600,"due":"2013-03-05T08:00:00.000Z","created":"2013-03-06T00:57:47.000Z","updated":"2013-03-06T00:57:47.000Z","completed":null,"deleted":false,"id":"b1-68691467-45"}
     ];
 }
-
 // TodoItemCtrl.$inject = [];
+// MyCtrl2.$inject = [];
+
+function LoginController($scope, $location) {
+    $scope.signIn = function() {
+        $location.path('/main');
+    };
+}
+
+function MainController($scope) {
+}
